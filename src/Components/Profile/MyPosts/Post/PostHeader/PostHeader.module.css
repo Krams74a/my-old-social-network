@@ -1,0 +1,13 @@
+.postHeader {
+    padding: 10px;
+
+    display: grid;
+
+    grid-template-columns: 2fr 8fr;
+}
+
+.userImg {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+}

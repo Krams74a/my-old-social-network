@@ -1,0 +1,7 @@
+.postFooter {
+    display: grid;
+
+    padding: 10px;
+
+    grid-template-columns: 5fr 5fr 5fr;
+}

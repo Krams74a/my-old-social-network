@@ -1,0 +1,30 @@
+.dialogItem {
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 5px;
+
+    display: grid;
+    grid-template-columns: 70px 2fr;
+
+    background-color: #6BA4E9;
+    text-decoration: none;
+}
+
+.dialogItem:hover {
+    background-color: #4c8ae9;
+}
+
+.dialogItemActive {
+    background-color: #408ee9;
+}
+
+.userImg img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+}
+
+.userName {
+    color: #FFFFFF;
+    font-size: 14pt;
+}
