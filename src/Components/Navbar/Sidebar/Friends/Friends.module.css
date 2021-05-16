@@ -1,0 +1,8 @@
+.friendsContainer {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    grid-template-rows: 4fr 4fr;
+
+    background-color: #FFFFFF;
+
+}
