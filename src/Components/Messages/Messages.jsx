@@ -2,11 +2,11 @@ import s from './Messages.module.css';
 import DialogsList from "./DialogsList/DialogsList";
 import Chat from "./Chat/Chat";
 
-const Messages = () => {
+const Messages = (props) => {
     return (
         <div className={s.messages}>
-            <DialogsList />
-            <Chat />
+            <DialogsList dialogsInfo={props.state.dialogsInfo}/>
+            <Chat messagesInfo={props.state.messagesInfo}/>
         </div>
     );
 }
