@@ -11,3 +11,13 @@
     height: 60px;
     border-radius: 30px;
 }
+
+.postData {
+    color: gray;
+    font-size: small;
+}
+
+.postInfo {
+    margin-top: auto;
+    margin-bottom: 12%;
+}
