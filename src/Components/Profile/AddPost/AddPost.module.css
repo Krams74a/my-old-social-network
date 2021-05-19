@@ -1,0 +1,33 @@
+.addPostContainer {
+    background-color: #FFFFFF;
+    box-shadow: 0 0 8px 0 rgba(0,0,0,.15);
+
+    display: grid;
+    grid-template-rows: 5fr 2fr;
+
+    width: 700px;
+    height: 200px;
+
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+.addPostContainer button {
+    width: 200px;
+    color: white;
+    background-color: #4c8ae9;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.addPostContainer textarea {
+    resize: none;
+    outline: none;
+}
+
+.item {
+    margin: 10px;
+}

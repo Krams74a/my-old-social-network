@@ -2,9 +2,9 @@ import s from './CommentButton.module.css';
 
 const CommentButton = () => {
     return (
-        <div className={s.commentButton}>
-            CommentButton
-        </div>
+        <button className={s.commentButton}>
+            Комментарий
+        </button>
     );
 }
 

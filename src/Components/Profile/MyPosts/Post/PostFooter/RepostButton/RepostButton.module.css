@@ -1,0 +1,9 @@
+.repostButton {
+    color: white;
+    background-color: #4c8ae9;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    overflow: hidden;
+    cursor: pointer;
+}
