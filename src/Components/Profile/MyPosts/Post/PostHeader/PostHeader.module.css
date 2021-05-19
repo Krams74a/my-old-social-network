@@ -3,13 +3,19 @@
 
     display: grid;
 
-    grid-template-columns: 2fr 8fr;
+    grid-template-columns: 120px 200px;
+}
+
+.userImgContainer {
+    height: auto;
+    width: auto;
 }
 
 .userImg {
-    width: 60px;
-    height: 60px;
-    border-radius: 30px;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    padding: 10px;
 }
 
 .postData {
@@ -19,5 +25,6 @@
 
 .postInfo {
     margin-top: auto;
-    margin-bottom: 12%;
+    margin-bottom: 24%;
+    margin-left: 10px;
 }

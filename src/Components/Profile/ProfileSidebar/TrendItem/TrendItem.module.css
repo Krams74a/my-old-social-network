@@ -1,0 +1,16 @@
+.trendItem {
+    display: grid;
+    grid-template-rows: 5px 50px;
+
+    padding-left: 25px;
+    margin-top: 20px;
+}
+
+.itemNameContainer a {
+    text-decoration: none;
+    color: #0645AD;
+}
+
+.itemCountContainer p {
+
+}

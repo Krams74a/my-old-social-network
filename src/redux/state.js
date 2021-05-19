@@ -9,6 +9,12 @@ let state = {
             {id: 4, userImg: "https://sun9-61.userapi.com/impg/KUlL2nnqJOZNF0tLnUVQZe-AfecK0CgBgEaLEw/csFRNfsfgGs.jpg?size=543x1080&quality=96&sign=cbe68261ce14bd9291d67127a6df960e&type=album", userName: "Денис Дан", message: "если шо я беседу не читал, там вопрос шо лучше ссд или хдд, что отвечать если я считаю что один под одно другой под другое"}
         ],
         newPostText: '',
+        trendsInfo: [
+            {name: "#ABOBA", mentionsCount: 7},
+            {name: "#КонецБиткоина", mentionsCount: 1000},
+            {name: "#НоваяСоцсеть", mentionsCount: 153},
+            {name: "#Привчёдел", mentionsCount: 15},
+        ],
     },
     messages: {
         messagesInfo: [

@@ -1,3 +1,9 @@
 .profile {
     background-color: #EDEEF0;
+
+    display: grid;
+    grid-template-areas:
+    "h h"
+    "c s";
+    grid-template-columns: 70% 30%;
 }
