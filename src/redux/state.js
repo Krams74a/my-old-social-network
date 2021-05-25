@@ -59,16 +59,19 @@ export let store = {
                 id: 5,
                 message: this._state.profile.newPostText,
                 likesCount: 0,
-                userImg: "https://vk.com/images/camera_200.png",
-                userName: "Иван Новиков",
+                userImg: "https://sun9-12.userapi.com/impf/c849320/v849320227/1c9896/-WXxGlQ1818.jpg?size=450x600&quality=96&sign=92e2be87652a184ec61335ba95c92c8d&type=album",
+                userName: "Александра Маркова",
             };
+            if (this._state.profile.newPostText !== "") {
+                this._state.profile.newPostText = "";
+                this._state.profile.postsInfo.unshift(newPost);
+                this._callSubscriber(this.state);
+            }
 
-            this._state.profile.newPostText = "";
-            this._state.profile.postsInfo.push(newPost);
-            this._callSubscriber(this.state);
         } else if (action.type === UPDATE_NEW_POST_TEXT) {
             this._state.profile.newPostText = action.newText;
             this._callSubscriber(this.state);
+
         } else if (action.type === ADD_MESSAGE) {
             let newMessage = {
                 id: 5,
@@ -76,11 +79,15 @@ export let store = {
                 userUrl: "https://vk.com/images/camera_200.png",
                 userName: "Иван Новиков"
             };
-            this._state.messages.newMessageText = "";
-            this._state.messages.messagesInfo.push(newMessage);
-            this._callSubscriber();
+            if (this._state.messages.newMessageText !== "") {
+                this._state.messages.newMessageText = "";
+                this._state.messages.messagesInfo.push(newMessage);
+                this._callSubscriber();
+            }
+
         } else if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
             this._state.messages.newMessageText = action.newText;
+            console.log(this._state.messages.newMessageText);
             this._callSubscriber(this.state);
         }
     },

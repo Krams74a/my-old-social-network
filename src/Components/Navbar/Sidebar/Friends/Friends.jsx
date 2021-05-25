@@ -2,7 +2,6 @@ import s from './Friends.module.css';
 import FriendItem from "./FriendItem/FriendItem";
 
 const Friends = (props) => {
-    console.log(props);
     let friendsElements = props.state.sidebar.friendsInfo.map(f => <FriendItem friendName={f.name} friendImgUrl={f.imgUrl}/>)
     return (
         <div>

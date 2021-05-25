@@ -10,7 +10,6 @@ import Settings from "./Components/Settings/Settings";
 import {Route, BrowserRouter} from "react-router-dom";
 
 function App (props) {
-    console.log(props.state);
     return (
             <div className="app">
                 <Header />

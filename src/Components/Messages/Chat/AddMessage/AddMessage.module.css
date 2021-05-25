@@ -1,0 +1,20 @@
+.addMessage textarea {
+    height: 50px;
+    width: 80%;
+
+    resize: none;
+    outline: none;
+}
+
+.buttonContainer button{
+    width: 200px;
+    height: 35px;
+
+    color: white;
+    background-color: #4c8ae9;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    overflow: hidden;
+    cursor: pointer;
+}

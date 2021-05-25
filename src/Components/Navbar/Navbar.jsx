@@ -3,7 +3,6 @@ import {NavLink} from "react-router-dom";
 import Sidebar from "./Sidebar/Sidebar";
 
 const Navbar = (props) => {
-    console.log(props.state);
     return (
         <nav className={s.navbar}>
             <NavLink to='/profile' activeClassName={s.active} className={s.item}>
