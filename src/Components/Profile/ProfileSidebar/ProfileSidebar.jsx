@@ -3,7 +3,7 @@ import TrendItem from "./TrendItem/TrendItem";
 
 const ProfileSidebar = (props) => {
 
-    let trendsElements = props.profile.trendsInfo.map( t => <TrendItem name={t.name} mentionsCount={t.mentionsCount} />);
+    let trendsElements = props.state.profile.trendsInfo.map( t => <TrendItem name={t.name} mentionsCount={t.mentionsCount} />);
 
     return (
         <div className={s.profileSidebar}>

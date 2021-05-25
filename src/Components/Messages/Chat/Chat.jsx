@@ -1,23 +1,30 @@
 import s from './Chat.module.css';
 import Message from "./Message/Message";
 import React from "react";
+import {addMessageActionCreator, updateNewMessageTextActionCreator} from "../../../redux/state";
 
 const Chat = (props) => {
 
-    let messagesElements = props.messagesInfo.map(m => <Message message={m.message} imgUrl={m.userUrl}/>)
-
+    let messagesElements = props.state.messages.messagesInfo.map(m => <Message message={m.message} imgUrl={m.userUrl}/>)
     let newMessageElement = React.createRef();
-    let newMessage = () => {
+
+    let addMessage = () => {
+        let action = addMessageActionCreator();
+        props.dispatch(action);
+    }
+
+    let updateNewMessageText = () => {
         let text = newMessageElement.current.value;
-        alert(text);
+        let action = updateNewMessageTextActionCreator(text);
+        props.dispatch(action);
     }
 
     return (
         <div className={s.chat}>
             { messagesElements }
             <div>
-                <textarea ref={newMessageElement}></textarea>
-                <button onClick={newMessage}>Отправить</button>
+                <textarea onChange={updateNewMessageText} ref={newMessageElement} value={props.state.messages.newMessageText}/>
+                <button onClick={addMessage}>Отправить</button>
             </div>
         </div>
 

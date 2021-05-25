@@ -5,8 +5,8 @@ import Chat from "./Chat/Chat";
 const Messages = (props) => {
     return (
         <div className={s.messages}>
-            <DialogsList dialogsInfo={props.state.dialogsInfo}/>
-            <Chat messagesInfo={props.state.messagesInfo}/>
+            <DialogsList state={props.state}/>
+            <Chat state={props.state} dispatch={props.dispatch}/>
         </div>
     );
 }

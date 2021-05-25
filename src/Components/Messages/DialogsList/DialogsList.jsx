@@ -3,7 +3,7 @@ import DialogItem from "./DialogItem/DialogItem";
 
 const DialogsList = (props) => {
 
-    let dialogsElements = props.dialogsInfo.map(d => <DialogItem id={d.id} name={d.name} imgUrl={d.imgUrl}/>)
+    let dialogsElements = props.state.messages.dialogsInfo.map(d => <DialogItem id={d.id} name={d.name} imgUrl={d.imgUrl}/>)
 
     return (
         <div className={s.dialogsList}>

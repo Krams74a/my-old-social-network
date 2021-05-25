@@ -3,7 +3,7 @@ import {NavLink} from "react-router-dom";
 import Sidebar from "./Sidebar/Sidebar";
 
 const Navbar = (props) => {
-    console.log(props);
+    console.log(props.state);
     return (
         <nav className={s.navbar}>
             <NavLink to='/profile' activeClassName={s.active} className={s.item}>
@@ -22,7 +22,7 @@ const Navbar = (props) => {
                 <p className={s.itemLink}>Настройки</p>
             </NavLink>
             <hr/>
-            <Sidebar friendsInfo={props.state.friendsInfo}/>
+            <Sidebar state={props.state}/>
         </nav>
     );
 }
