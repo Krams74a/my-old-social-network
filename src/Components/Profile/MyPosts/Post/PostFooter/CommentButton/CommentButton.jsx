@@ -2,8 +2,7 @@ import s from './CommentButton.module.css';
 
 const CommentButton = () => {
     return (
-        <button className={s.commentButton}>
-            Комментарий
+        <button className={(s.commentButton)+" fa fa-commenting-o"}>
         </button>
     );
 }

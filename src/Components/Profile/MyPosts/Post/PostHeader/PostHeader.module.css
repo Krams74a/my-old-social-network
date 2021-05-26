@@ -1,30 +1,43 @@
 .postHeader {
-    padding: 10px;
-
     display: grid;
-
-    grid-template-columns: 120px 200px;
+    width: 100%;
+    grid-template-columns: 15% 85%;
+    grid-template-rows: 40% 80%;
+    grid-template-areas:
+    "i n"
+    "i d";
+    word-wrap:break-word;
+    padding: 20px;
 }
 
 .userImgContainer {
-    height: auto;
-    width: auto;
+    grid-area: i;
 }
 
-.userImg {
-    width: 100px;
-    height: 100px;
-    border-radius: 100px;
-    padding: 10px;
+.userImgContainer img {
+    width: 90px;
+    height: 90px;
+    border-radius: 90px;
 }
 
-.postData {
-    color: gray;
+.userNameContainer {
+    grid-area: n;
+    max-height: 20px;
+    align-self: end;
+}
+
+.userNameContainer a {
+    text-decoration: none;
+    color: #0645AD;
+}
+
+.postDataContainer {
+    grid-area: d;
+}
+
+.postDataContainer a {
+    text-decoration: none;
+    color: #626d7a;
     font-size: small;
-}
-
-.postInfo {
-    margin-top: auto;
-    margin-bottom: 24%;
-    margin-left: 10px;
+    font-style: italic;
 }

@@ -1,6 +1,8 @@
 .likeButton {
-    color: white;
-    background-color: #e92c1e;
+    font-size: 20px;
+    width: auto;
+    background-color: #FFFFFF;
+    color: black;
     border: none;
     border-radius: 5px;
     outline: none;

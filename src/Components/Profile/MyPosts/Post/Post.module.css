@@ -3,7 +3,7 @@
     box-shadow: 0 0 8px 0 rgba(0,0,0,.15);
 
     display: grid;
-    grid-template-rows: 3fr 10fr 2fr;
+    grid-template-rows: 3fr 10fr 3fr;
 
     margin-top: 20px;
     margin-left: 50px;

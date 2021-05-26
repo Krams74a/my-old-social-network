@@ -3,9 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import store from "./redux/state";
-import DialogItem from "./Components/Messages/DialogsList/DialogItem/DialogItem";
-import Post from "./Components/Profile/MyPosts/Post/Post";
+import store from "./redux/store-redux";
 import {BrowserRouter} from "react-router-dom";
 
 let rerenderEntireTree = (state) => {

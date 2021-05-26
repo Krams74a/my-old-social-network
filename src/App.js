@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Header from "./Components/Header/Header";
 import Navbar from "./Components/Navbar/Navbar";
@@ -7,7 +6,7 @@ import Messages from "./Components/Messages/Messages";
 import News from "./Components/News/News";
 import Music from "./Components/Music/Music";
 import Settings from "./Components/Settings/Settings";
-import {Route, BrowserRouter} from "react-router-dom";
+import {Route} from "react-router-dom";
 
 function App (props) {
     return (

@@ -1,7 +1,6 @@
 .dialogItem {
     padding: 5px;
     margin-top: 5px;
-    border-radius: 5px;
 
     display: grid;
     grid-template-columns: 70px 2fr;

@@ -7,7 +7,7 @@ const FriendItem = (props) => {
                 <img src={props.friendImgUrl} />
             </div>
             <div className={s.friendName}>
-                <span>{props.friendName}</span>
+                <p>{props.friendName}</p>
             </div>
         </div>
     )

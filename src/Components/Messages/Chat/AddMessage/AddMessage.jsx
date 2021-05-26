@@ -1,6 +1,6 @@
 import s from "./AddMessage.module.css";
 import React from "react";
-import {addMessageActionCreator, updateNewMessageTextActionCreator} from "../../../../redux/state";
+import {addMessageActionCreator, updateNewMessageTextActionCreator} from "../../../../redux/messagesReducer";
 
 const AddMessage = (props) => {
 
@@ -17,12 +17,12 @@ const AddMessage = (props) => {
 
     return (
         <div className={s.addMessage}>
-            <div>
-                    <textarea onChange={updateNewMessageText} value={props.state.messages.newMessageText}
-                              placeholder="Отправьте сообщение..."/>
+            <div className={s.textareaContainer}>
+                <textarea onChange={updateNewMessageText} value={props.state.messages.newMessageText}
+                              placeholder="Напишите сообщение..."/>
             </div>
             <div className={s.buttonContainer}>
-                <button onClick={addMessage}>Отправить</button>
+                <button className="fa fa-paper-plane" onClick={addMessage}> Отправить</button>
             </div>
         </div>
     );
