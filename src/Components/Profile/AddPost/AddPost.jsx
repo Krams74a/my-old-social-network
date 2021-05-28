@@ -6,20 +6,18 @@ import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../red
 const AddPost = (props) => {
 
     let addPost = () => {
-        let action = addPostActionCreator();
-        props.dispatch(action);
+        props.addPost();
     }
 
     let onPostChange = (event) => {
         let text = event.target.value;
-        let action = updateNewPostTextActionCreator(text);
-        props.dispatch(action);
+        props.onPostChange(text);
     }
 
     return (
         <div className={s.addPostContainer}>
             <textarea className={s.item} onChange={onPostChange}
-                      value={props.state.profile.newPostText}
+                      value={props.value}
                       placeholder='Что у вас нового?'/>
             <button className={s.item} onClick={addPost}>Опубликовать</button>
         </div>

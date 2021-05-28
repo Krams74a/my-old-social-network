@@ -2,7 +2,7 @@ import './App.css';
 import Header from "./Components/Header/Header";
 import Navbar from "./Components/Navbar/Navbar";
 import Profile from "./Components/Profile/Profile";
-import Messages from "./Components/Messages/Messages";
+import MessagesPage from "./Components/MessagesPage/MessagesPage";
 import News from "./Components/News/News";
 import Music from "./Components/Music/Music";
 import Settings from "./Components/Settings/Settings";
@@ -14,8 +14,8 @@ function App (props) {
                 <Header />
                 <Navbar state={props.state} />
                 <div className="app-wrapper-content">
-                    <Route path='/profile' render={ () => <Profile state={props.state} dispatch={props.dispatch}/>}/>
-                    <Route path='/messages' render={() => <Messages state={props.state} dispatch={props.dispatch}/>} />
+                    <Route path='/profile' render={ () => <Profile store={props.store}/>}/>
+                    <Route path='/messages' render={() => <MessagesPage store={props.store}/>} />
                     <Route path='/news' component={News} />
                     <Route path='/music' component={Music} />
                     <Route path='/settings' component={Settings} />

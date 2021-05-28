@@ -27,6 +27,13 @@ let initialState = {
             userImg: "https://sun9-61.userapi.com/impg/KUlL2nnqJOZNF0tLnUVQZe-AfecK0CgBgEaLEw/csFRNfsfgGs.jpg?size=543x1080&quality=96&sign=cbe68261ce14bd9291d67127a6df960e&type=album",
             userName: "Денис Дан",
             message: "если шо я беседу не читал, там вопрос шо лучше ссд или хдд, что отвечать если я считаю что один под одно другой под другое"
+        },
+        {
+            id: 5,
+            userImg: "https://sun9-42.userapi.com/impg/c858532/v858532203/10b1e2/FgqHOcY_PiM.jpg?size=1080x1080&quality=96&sign=49365d7493b4c4c5512ce04ee0d26676&type=album",
+            userName: "Максим Ветлугин",
+            message: "",
+            postImage: "https://sun9-72.userapi.com/impg/7PMvbH4sOpKr1GIM2KFXW6ENhj3r_y3Y7wK6RA/HNrOqetXMLE.jpg?size=1080x531&quality=96&sign=3471eb513aaaa9f2726bdbcd7cf9e74f&type=album"
         }
     ],
     newPostText: '',
@@ -40,7 +47,7 @@ let initialState = {
 
 export const profileReducer = (state = initialState, action) => {
     switch (action.type) {
-        case ADD_POST:
+        case ADD_POST: {
             let newPost = {
                 id: 5,
                 message: state.newPostText,
@@ -48,15 +55,20 @@ export const profileReducer = (state = initialState, action) => {
                 userImg: "https://sun9-12.userapi.com/impf/c849320/v849320227/1c9896/-WXxGlQ1818.jpg?size=450x600&quality=96&sign=92e2be87652a184ec61335ba95c92c8d&type=album",
                 userName: "Александра Маркова",
             };
-            if (state.newPostText !== "") {
-                state.newPostText = "";
-                state.postsInfo.unshift(newPost);
+            let stateCopy = {...state};
+            stateCopy.postsInfo = [...state.postsInfo];
+            if (stateCopy.newPostText !== "") {
+                stateCopy.newPostText = "";
+                stateCopy.postsInfo.unshift(newPost);
             }
-            return state;
+            return stateCopy;
+        }
 
-        case UPDATE_NEW_POST_TEXT:
-            state.newPostText = action.newText;
-            return state;
+        case UPDATE_NEW_POST_TEXT: {
+            let stateCopy = {...state};
+            stateCopy.newPostText = action.newText;
+            return stateCopy;
+        }
 
         default:
             return state;
