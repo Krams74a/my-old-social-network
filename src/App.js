@@ -7,6 +7,7 @@ import News from "./Components/News/News";
 import Music from "./Components/Music/Music";
 import Settings from "./Components/Settings/Settings";
 import {Route} from "react-router-dom";
+import Users from "./Components/Users/Users";
 
 function App (props) {
     return (
@@ -16,6 +17,7 @@ function App (props) {
                 <div className="app-wrapper-content">
                     <Route path='/profile' render={ () => <Profile store={props.store}/>}/>
                     <Route path='/messages' render={() => <MessagesPage store={props.store}/>} />
+                    <Route path='/users' render={() => <Users store={props.store}/>} />
                     <Route path='/news' component={News} />
                     <Route path='/music' component={Music} />
                     <Route path='/settings' component={Settings} />

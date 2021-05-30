@@ -1,10 +1,11 @@
+/*
 import s from './FriendItem.module.css';
 
 const FriendItem = (props) => {
     return (
         <div className={s.friendItem}>
             <div className={s.friendImg}>
-                <img src={props.friendImgUrl} />
+                <img src={props.friendImgUrl} alt="" />
             </div>
             <div className={s.friendName}>
                 <p>{props.friendName}</p>
@@ -13,4 +14,4 @@ const FriendItem = (props) => {
     )
 }
 
-export default FriendItem;
+export default FriendItem;*/

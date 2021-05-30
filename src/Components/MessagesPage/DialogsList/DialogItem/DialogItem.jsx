@@ -5,7 +5,7 @@ const DialogItem = (props) => {
     return (
         <NavLink to={"/messages/"+props.id} activeClassName={s.dialogItemActive} className={s.dialogItem}>
             <div className={s.userImg}>
-                <img src={props.imgUrl} />
+                <img src={props.imgUrl} alt="Not load"/>
             </div>
             <div className={s.userName}>
                 <p>{props.name}</p>

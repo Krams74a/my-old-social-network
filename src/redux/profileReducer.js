@@ -38,16 +38,16 @@ let initialState = {
     ],
     newPostText: '',
     trendsInfo: [
-        {name: "#ABOBA", mentionsCount: 7},
-        {name: "#КонецБиткоина", mentionsCount: 1000},
-        {name: "#НоваяСоцсеть", mentionsCount: 153},
-        {name: "#Привчёдел", mentionsCount: 15},
+        {name: "#ABOBA", mentionsCount: 7, id: 1},
+        {name: "#КонецБиткоина", mentionsCount: 1000, id: 2},
+        {name: "#НоваяСоцсеть", mentionsCount: 153, id: 3},
+        {name: "#Привчёдел", mentionsCount: 15, id: 4},
     ],
 };
 
 export const profileReducer = (state = initialState, action) => {
     switch (action.type) {
-        case ADD_POST: {
+        case ADD_POST:
             let newPost = {
                 id: 5,
                 message: state.newPostText,
@@ -55,20 +55,17 @@ export const profileReducer = (state = initialState, action) => {
                 userImg: "https://sun9-12.userapi.com/impf/c849320/v849320227/1c9896/-WXxGlQ1818.jpg?size=450x600&quality=96&sign=92e2be87652a184ec61335ba95c92c8d&type=album",
                 userName: "Александра Маркова",
             };
-            let stateCopy = {...state};
-            stateCopy.postsInfo = [...state.postsInfo];
-            if (stateCopy.newPostText !== "") {
-                stateCopy.newPostText = "";
-                stateCopy.postsInfo.unshift(newPost);
-            }
-            return stateCopy;
-        }
+            return {
+                ...state,
+                newPostText: "",
+                postsInfo: [newPost, ...state.postsInfo],
+            };
 
-        case UPDATE_NEW_POST_TEXT: {
-            let stateCopy = {...state};
-            stateCopy.newPostText = action.newText;
-            return stateCopy;
-        }
+        case UPDATE_NEW_POST_TEXT:
+             return {
+                ...state,
+                newPostText: state.newPostText = action.newText
+            };
 
         default:
             return state;

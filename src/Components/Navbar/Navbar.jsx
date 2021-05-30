@@ -1,6 +1,5 @@
 import s from './Navbar.module.css';
 import {NavLink} from "react-router-dom";
-import Sidebar from "./Sidebar/Sidebar";
 
 const Navbar = (props) => {
     return (
@@ -10,6 +9,9 @@ const Navbar = (props) => {
             </NavLink>
             <NavLink to='/messages' activeClassName={s.active} className={s.item}>
                 <p className={(s.itemLink)+" fa fa-comments-o"}> Сообщения</p>
+            </NavLink>
+            <NavLink to='/users' activeClassName={s.active} className={s.item}>
+                <p className={(s.itemLink)+" fa fa-user-circle"}> Пользователи</p>
             </NavLink>
             <NavLink to='/news' activeClassName={s.active} className={s.item}>
                 <p className={(s.itemLink)+" fa fa-newspaper-o"}> Новости</p>

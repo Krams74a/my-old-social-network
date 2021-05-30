@@ -21,7 +21,7 @@ import {connect} from "react-redux";
 
 let mapStateToProps = (state) => {
     return {
-        postsElements: state.profile.postsInfo.map(p => <Post userImg={p.userImg} userName={p.userName} postData={"14.05.2021"} message={p.message} postImage={p.postImage}/>),
+        postsElements: state.profile.postsInfo.map(p => <Post key={p.id} userImg={p.userImg} userName={p.userName} postData={"14.05.2021"} message={p.message} postImage={p.postImage}/>),
     }
 }
 

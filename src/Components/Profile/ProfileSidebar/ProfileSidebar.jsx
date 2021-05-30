@@ -1,5 +1,4 @@
 import s from './ProfileSidebar.module.css';
-import TrendItem from "./TrendItem/TrendItem";
 
 const ProfileSidebar = (props) => {
     return (

@@ -4,12 +4,12 @@ const ADD_MESSAGE = 'ADD-MESSAGE';
 let initialState = {
     messagesInfo: [
         {
-            id: "1",
+            id: 1,
             userUrl: "https://sun9-42.userapi.com/impg/c858532/v858532203/10b1e2/FgqHOcY_PiM.jpg?size=1080x1080&quality=96&sign=49365d7493b4c4c5512ce04ee0d26676&type=album",
             message: "Ссд хоть как лучше , жесткий сейчас он не всегда нужен, он только если нужно хранить большие объемы данных, а ссд на 240 500 гб на пару лет перезаписей хватит"
         },
         {
-            id: "1",
+            id: 2,
             userUrl: "https://sun9-42.userapi.com/impg/c858532/v858532203/10b1e2/FgqHOcY_PiM.jpg?size=1080x1080&quality=96&sign=49365d7493b4c4c5512ce04ee0d26676&type=album",
             message: "Привчедел"
         },
@@ -20,7 +20,11 @@ let initialState = {
             name: "Максим Ветлугин",
             imgUrl: "https://sun9-42.userapi.com/impg/c858532/v858532203/10b1e2/FgqHOcY_PiM.jpg?size=1080x1080&quality=96&sign=49365d7493b4c4c5512ce04ee0d26676&type=album"
         },
-        {id: 2, name: "Иван Новиков", imgUrl: "https://vk.com/images/camera_200.png"},
+        {
+            id: 2,
+            name: "Иван Новиков",
+            imgUrl: "https://vk.com/images/camera_200.png"
+        },
         {
             id: 3,
             name: "Денис Дан",
@@ -47,33 +51,29 @@ let initialState = {
 
 export const messagesReducer = (state = initialState, action) => {
     switch (action.type) {
-        case ADD_MESSAGE: {
+        case ADD_MESSAGE:
             let newMessage = {
                 id: 5,
                 message: state.newMessageText,
                 userUrl: "https://vk.com/images/camera_200.png",
                 userName: "Иван Новиков"
             };
-            let stateCopy = {...state};
-            stateCopy.messagesInfo = [...state.messagesInfo];
-            if (stateCopy.newMessageText !== "") {
-                stateCopy.newMessageText = "";
-                stateCopy.messagesInfo.push(newMessage);
-            }
-            return stateCopy;
-        }
+            return {
+                ...state,
+                newMessageText: "",
+                messagesInfo: [...state.messagesInfo, newMessage]
+            };
 
-        case UPDATE_NEW_MESSAGE_TEXT: {
-            let stateCopy = {...state};
-            stateCopy.newMessageText = action.newText;
-            return stateCopy;
-        }
+        case UPDATE_NEW_MESSAGE_TEXT:
+            return {
+                ...state,
+                newMessageText: action.newText
+            };
 
         default:
             return state;
     }
 }
-
 
 export const addMessageActionCreator = () => ({type: ADD_MESSAGE})
 export const updateNewMessageTextActionCreator = (text) => ({type: UPDATE_NEW_MESSAGE_TEXT, newText: text})
