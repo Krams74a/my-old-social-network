@@ -1,0 +1,62 @@
+.userItem {
+    display: grid;
+    grid-template-columns: 1fr 7fr 3fr;
+    grid-gap: 5px;
+    grid-template-areas:
+            "img info b";
+
+    background-color: #FFFFFF;
+    box-shadow: 0 0 8px 0 rgba(0,0,0,.12);
+
+    margin-bottom: 15px;
+
+    width: 100%;
+    padding: 5px;
+}
+
+.userImageDiv {
+    grid-area: img;
+}
+
+.userImageDiv img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+}
+
+.userInfoDiv {
+    grid-area: info;
+    display: grid;
+}
+
+.userNameDiv {
+}
+
+.userNameDiv a {
+    text-decoration: none;
+    color: #0645AD;
+}
+
+.userDescriptionDiv p {
+    margin: 0;
+    padding: 0;
+}
+
+.subscribeButtonDiv {
+    grid-area: b;
+}
+
+.subscribeButtonDiv button {
+    color: white;
+    background-color: #4c8ae9;
+    border: none;
+    outline: none;
+    overflow: hidden;
+    cursor: pointer;
+
+    height: 100%;
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+}

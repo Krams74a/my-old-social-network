@@ -6,11 +6,13 @@ const Message = (props) => {
             <div className={s.userImageContainer}>
                 <img src={props.imgUrl} alt="Not load"/>
             </div>
-            <div className={s.userName}>
-                <a href="#s">Иван</a>
-            </div>
-            <div className={s.messageText}>
-                <p>{props.message}</p>
+            <div className={s.messageContent}>
+                <div className={s.userName}>
+                    <a href="#s">Иван</a>
+                </div>
+                <div className={s.messageText}>
+                    <p>{props.message}</p>
+                </div>
             </div>
         </div>
     );

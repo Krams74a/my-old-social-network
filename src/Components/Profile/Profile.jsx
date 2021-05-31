@@ -7,10 +7,16 @@ import ProfileSidebarContainer from "./ProfileSidebar/ProfileSidebarContainer";
 const Profile = () => {
     return (
         <div className={s.profile}>
-            <ProfileInfo/>
-            <AddPostContainer/>
-            <MyPostsContainer/>
-            <ProfileSidebarContainer/>
+            <div className={s.header}>
+                <ProfileInfo/>
+            </div>
+            <div className={s.content}>
+                <AddPostContainer/>
+                <MyPostsContainer/>
+            </div>
+            <div className={s.sidebar}>
+                <ProfileSidebarContainer/>
+            </div>
         </div>
     );
 }

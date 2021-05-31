@@ -1,24 +1,23 @@
 import s from "./AddMessage.module.css";
 import React from "react";
-import {addMessageActionCreator, updateNewMessageTextActionCreator} from "../../../../redux/messagesReducer";
 
 const AddMessage = (props) => {
 
     let addMessage = () => {
-        let action = addMessageActionCreator();
-        props.dispatch(action);
+        if (props.value !== "") {
+            props.addMessage();
+        }
     }
 
     let updateNewMessageText = (event) => {
         let text = event.target.value;
-        let action = updateNewMessageTextActionCreator(text);
-        props.dispatch(action);
+        props.updateNewMessageText(text);
     }
 
     return (
         <div className={s.addMessage}>
             <div className={s.textareaContainer}>
-                <textarea onChange={updateNewMessageText} value={props.state.messages.newMessageText}
+                <textarea onChange={updateNewMessageText} value={props.value}
                               placeholder="Напишите сообщение..."/>
             </div>
             <div className={s.buttonContainer}>

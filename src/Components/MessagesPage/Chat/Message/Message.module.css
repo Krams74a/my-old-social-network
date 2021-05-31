@@ -1,27 +1,23 @@
 .messageContainer {
     display: grid;
     width: 100%;
-    grid-template-columns: 6% 94%;
-    grid-template-rows: 25px 100%;
-    grid-template-areas:
-    "i n"
-    "i c";
+    grid-template-columns: 1fr 15fr;
+    grid-gap: 5px;
     word-wrap:break-word;
 
     margin-bottom: 25px;
+
 }
 
-.userImageContainer {
-    grid-area: i;
+.messageContent {
+    display: grid;
 }
 
 .userName {
-    grid-area: n;
     max-height: 20px;
 }
 
 .messageText {
-    grid-area: c;
     min-width: 100%;
 }
 

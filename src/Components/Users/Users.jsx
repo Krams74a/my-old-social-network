@@ -1,9 +1,10 @@
 import s from './Users.module.css';
+import React from "react";
 
-const Users = () => {
+const Users = (props) => {
     return (
-        <div className={s.Users}>
-
+        <div className={s.users}>
+            {props.usersElements}
         </div>
     );
 }

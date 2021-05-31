@@ -1,5 +1,4 @@
 .profileInfo {
-    grid-area: h;
     display: grid;
     grid-template-rows: 300px 125px;
 }

@@ -7,3 +7,15 @@
     "c s";
     grid-template-columns: 70% 30%;
 }
+
+.header {
+    grid-area: h;
+}
+
+.content {
+    grid-area: c;
+}
+
+.sidebar {
+    grid-area: s;
+}
