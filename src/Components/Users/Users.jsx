@@ -6,8 +6,13 @@ import * as axios from "axios";
 class Users extends React.Component {
 
     componentDidMount() {
+        let config = {
+            headers: {
+                "Access-Control-Allow-Origin": "https://social-network.samuraijs.com"
+            }
+        }
         if (this.props.usersInfo.length === 0) {
-            axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`).then(response => {
+            axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`, "", config).then(response => {
                 this.props.setUsers(response.data.items)
                 this.props.setTotalUsersCount(response.data.totalCount)
             })
