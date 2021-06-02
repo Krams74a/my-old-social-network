@@ -1,14 +1,27 @@
 import Users from "./Users";
 import {connect} from "react-redux";
-import UserItem from "./UserItem/UserItem";
+import {setCurrentPageAC, setTotalUsersCountAC, setUsersAC} from "../../redux/usersReducer";
 
 const mapStateToProps = (state) => {
     return {
-        usersElements: state.users.usersInfo.map(u => <UserItem key={u.id} id={u.id} userName={u.userName} userImg={u.userImg} isFriend={u.isFriend} userAge={u.userAge} userCity={u.userCity}/>)
+        usersInfo: state.users.usersInfo,
+        pageSize: state.users.pageSize,
+        totalUsersCount: state.users.totalUsersCount,
+        currentPage: state.users.currentPage
     }
 }
 const mapDispatchToProps = (dispatch) => {
-
+    return {
+        setUsers: (users) => {
+            dispatch(setUsersAC(users))
+        },
+        setCurrentPage: (currentPage) => {
+            dispatch(setCurrentPageAC(currentPage))
+        },
+        setTotalUsersCount: (totalUsersCount) => {
+            dispatch(setTotalUsersCountAC(totalUsersCount))
+        }
+    }
 }
 const UsersContainer = connect(mapStateToProps, mapDispatchToProps)(Users);
 
