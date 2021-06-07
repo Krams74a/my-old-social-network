@@ -1,24 +1,17 @@
 import {connect} from "react-redux";
 import UserItem from "./UserItem";
-import {addFriendAC, removeFriendAC} from "../../../redux/usersReducer";
+import {addFriend, removeFriend} from "../../../redux/usersReducer";
 
 const mapStateToProps = (state) => {
     return {
-
+        usersInfo: state.usersInfo,
+        currentPage: state.currentPage,
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        addFriend: (userId) => {
-            dispatch(addFriendAC(userId))
-        },
-        removeFriend: (userId) => {
-            dispatch(removeFriendAC(userId))
-        }
-    }
-}
-
-const UserItemContainer = connect(mapStateToProps, mapDispatchToProps)(UserItem);
+const UserItemContainer = connect(mapStateToProps, {
+    addFriend,
+    removeFriend
+})(UserItem);
 
 export default UserItemContainer;

@@ -1,0 +1,22 @@
+.loginBlock {
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    grid-gap: 10px;
+}
+
+.loginBlock a {
+    text-decoration: none;
+    color: black;
+
+    margin-top: 40%;
+}
+
+.userPhotoBlock {
+
+}
+
+.userPhotoBlock img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+}

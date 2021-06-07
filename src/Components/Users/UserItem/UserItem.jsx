@@ -1,6 +1,8 @@
 import s from "./UserItem.module.css";
 import React from "react";
 import userPhoto from "../../../assets/images/user.jpg"
+import {NavLink} from "react-router-dom";
+import * as axios from "axios";
 
 const UserItem = (props) => {
     return (
@@ -10,7 +12,7 @@ const UserItem = (props) => {
             </div>
             <div className={s.userInfoDiv}>
                 <div className={s.userNameDiv}>
-                    <a href="#s">{props.name}</a>
+                    <NavLink to={"/profile/"+props.id} href="#s">{props.name}</NavLink>
                 </div>
                 <div className={s.userDescriptionDiv}>
                     <p>{props.userCity + ", " + props.userAge + " лет"}</p>
@@ -18,9 +20,29 @@ const UserItem = (props) => {
             </div>
             <div className={s.subscribeButtonDiv}>
                 {props.followed ? <button onClick={() => {
-                    props.removeFriend(props.id)
+
+                    axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/`+props.id, {
+                        withCredentials: true,
+                        headers: {
+                            "API-KEY": "49152651-9fa6-4324-9da5-a7e5d52bdf5e"
+                        }
+                    }).then(response => {
+                        if (response.data.resultCode === 0) {
+                            props.removeFriend(props.id)
+                        }
+                    })
                 }}>Удалить из друзей</button> : <button onClick={() => {
-                    props.addFriend(props.id)
+
+                    axios.post(`https://social-network.samuraijs.com/api/1.0/follow/`+props.id, {}, {
+                        withCredentials: true,
+                        headers: {
+                            "API-KEY": "49152651-9fa6-4324-9da5-a7e5d52bdf5e"
+                        }
+                    }).then(response => {
+                        if (response.data.resultCode === 0) {
+                            props.addFriend(props.id)
+                        }
+                    })
                 }}>Добавить в друзья</button>}
 
             </div>

@@ -4,11 +4,11 @@ import MyPostsContainer from "./MyPosts/MyPostsContainer";
 import AddPostContainer from "./AddPost/AddPostContainer";
 import ProfileSidebarContainer from "./ProfileSidebar/ProfileSidebarContainer";
 
-const Profile = () => {
+const Profile = (props) => {
     return (
         <div className={s.profile}>
             <div className={s.header}>
-                <ProfileInfo/>
+                <ProfileInfo userProfile={props.userProfile} />
             </div>
             <div className={s.content}>
                 <AddPostContainer/>
